@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScamShield AI — Betting & Cyber Scam Intelligence Platform</title>
+  <meta name="description" content="AI-powered scam investigation platform. Detect betting/gambling fraud, phishing links, UPI scams, fake jobs, and analyze Scam DNA with emergency recovery guidance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient cyber background effects -->
+  <div class="bg-grid"></div>
+  <div class="glow-orb cyan"></div>
+  <div class="glow-orb purple"></div>
+
+  <!-- Live Threat Feed Ticker -->
+  <div class="ticker-wrap" aria-label="Live Scam Alerts">
+    <div class="ticker-inner">
+      <div class="ticker-item"><span class="ticker-tag">BETTING SCAM</span> win100x-aviator-game.apk flagged (Risk: 94/100) — Fake UPI Deposit Gateway</div>
+      <div class="ticker-item"><span class="ticker-tag">UPI FRAUD</span> "Electricity bill cut tonight" QR scam active across Telegram</div>
+      <div class="ticker-item"><span class="ticker-tag">COLOR PREDICTION</span> royal-win-club777.net flagged — Withdrawal frozen extortion</div>
+      <div class="ticker-item"><span class="ticker-tag">JOB SCAM</span> "Telegram YouTube Video Like Task" — ₹2,500 advance fee trap</div>
+      <div class="ticker-item"><span class="ticker-tag">BETTING SCAM</span> cricket-ipl-bettingid.in flagged — Fake bookmaker WhatsApp redirect</div>
+    </div>
+  </div>
+
+  <!-- Sticky Cyber Navigation -->
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="ScamShield AI Home">
+      <span class="brand-mark">🛡</span>
+      <span>ScamShield <b>AI</b> <span class="brand-flag">🇮🇳</span></span>
+    </a>
+    <nav>
+      <a href="#scanner">Universal Scanner</a>
+      <a href="#betting-focus">Betting Detection</a>
+      <a href="#scam-dna-info">Scam DNA</a>
+      <a href="#india-threats">India Scams</a>
+      <a href="#database">Threat DB</a>
+      <a href="#user-hub">My Hub & Activity</a>
+    </nav>
+    <div class="nav-actions">
+      <!-- Active User Profile Switcher -->
+      <button class="btn-profile" onclick="openProfileModal()" id="btnUserProfile" title="Switch active user profile or role">
+        <span class="user-avatar" id="navUserAvatar">👤</span>
+        <span class="user-name" id="navUserName">Rahul Verma</span>
+        <span class="user-role-badge" id="navUserRole">Citizen</span>
+      </button>
+      <button class="btn-emergency" onclick="openEmergencyMode()" id="btnNavEmergency">
+        <span>🚨</span> I've Been Scammed
+      </button>
+      <button class="btn-header" onclick="openReportModal()">
+        <span>🚩</span> Report Scam
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span> AI-POWERED SCAM INVESTIGATION ASSISTANT
+        </div>
+        <h1>Don't just check safe/unsafe.<br><span class="highlight">Uncover the Scam DNA.</span></h1>
+        <p class="hero-p">
+          ScamShield AI investigates <b>betting & gambling platforms, fake UPI payment pages, phishing URLs, and fraudulent WhatsApp offers</b>. We explain the exact warning signs, simulate the attack flow, and tell you what to do next.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="scrollToScanner('betting')">
+            <span>🎰</span> Scan Betting Link <span>→</span>
+          </button>
+          <button class="btn-secondary" onclick="scrollToScanner('url')">
+            <span>🔗</span> Scan Any URL / Message
+          </button>
+          <button class="btn-secondary" onclick="openEmergencyMode()">
+            <span>🆘</span> Emergency Guidance
+          </button>
+        </div>
+        <div class="trust-row">
+          <span><b>✓</b> Betting & Gambling Scam Engine</span>
+          <span><b>✓</b> Explainable Scam DNA (6 Vectors)</span>
+          <span><b>✓</b> India UPI & Cyber Safety (1930 Aligned)</span>
+        </div>
+      </div>
+
+      <!-- 3D Floating Threat Shield Graphic -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-ring r2"></div>
+        <div class="shield-core">🛡</div>
+        <div class="hud-pill p1">
+          <small>Active Threat Interceptor</small>
+          <strong>Betting & UPI Shield LIVE</strong>
+        </div>
+        <div class="hud-pill p2">
+          <small>Avg. Scam Detection Accuracy</small>
+          <strong>98.4%</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Platform Stats -->
+    <section class="stats-strip">
+      <div class="stat-box">
+        <strong>14,280+</strong>
+        <span>Betting & Scam Links Analyzed</span>
+      </div>
+      <div class="stat-box">
+        <strong>6 Vectors</strong>
+        <span>Deep "Scam DNA" Breakdown</span>
+      </div>
+      <div class="stat-box">
+        <strong>Instant</strong>
+        <span>Attack Flow Simulation</span>
+      </div>
+      <div class="stat-box">
+        <strong>1930 / NCCR</strong>
+        <span>Emergency Incident Export</span>
+      </div>
+    </section>
+
+    <!-- Universal Multi-Modal Scanner Section -->
+    <section class="scanner-section" id="scanner">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" id="betting-focus">UNIVERSAL THREAT SCANNER</div>
+          <h2>Paste Anything. Understand the Risk.</h2>
+        </div>
+        <p>
+          Submit a betting website, gambling app link, suspicious URL, WhatsApp message, or screenshot. ScamShield extracts the risk indicators and explains the fraud mechanism.
+        </p>
+      </div>
+
+      <div class="scanner-shell">
+        <!-- Sidebar Navigation Tabs -->
+        <aside class="scanner-sidebar" role="tablist">
+          <button class="scanner-tab-btn active betting-highlight" data-tab="betting" onclick="switchScannerTab('betting')">
+            <span class="tab-icon">🎰</span>
+            <div>
+              <b>Betting / Gambling</b>
+              <small>Casinos, Color Prediction, APKs</small>
+            </div>
+            <span class="badge-new">CORE</span>
+          </button>
+
+          <button class="scanner-tab-btn" data-tab="url" onclick="switchScannerTab('url')">
+            <span class="tab-icon">🔗</span>
+            <div>
+              <b>Website / URL Scanner</b>
+              <small>Phishing, Spoofing, Fake Logins</small>
+            </div>
+          </button>
+
+          <button class="scanner-tab-btn" data-tab="message" onclick="switchScannerTab('message')">
+            <span class="tab-icon">💬</span>
+            <div>
+              <b>SMS & WhatsApp</b>
+              <small>Fake KYC, Power Cut, Lottery</small>
+            </div>
+          </button>
+
+          <button class="scanner-tab-btn" data-tab="screenshot" onclick="switchScannerTab('screenshot')">
+            <span class="tab-icon">📸</span>
+            <div>
+              <b>Screenshot & QR</b>
+              <small>Payment slips, App UI, QR codes</small>
+            </div>
+          </button>
+
+          <button class="scanner-tab-btn" data-tab="job" onclick="switchScannerTab('job')">
+            <span class="tab-icon">💼</span>
+            <div>
+              <b>Job & Task Fraud</b>
+              <small>Part-time YouTube, Telegram traps</small>
+            </div>
+          </button>
+        </aside>
+
+        <!-- Main Scanner Body Area -->
+        <div class="scanner-body">
+          <!-- 1. Betting & Gambling Panel -->
+          <div id="panel-betting" class="scanner-panel">
+            <div class="panel-header">
+              <h3><span>🎰</span> Inspect Betting / Gambling Platform Link</h3>
+              <span class="panel-status">● Real-time Heuristic Engine</span>
+            </div>
+            <div class="input-group">
+              <input id="input-betting" class="cyber-input" type="text" placeholder="e.g., https://royal-win-club777.net/apk-download or color-prediction-bet.in">
+            </div>
+            <div class="preset-chips-wrap">
+              <div class="preset-title">Test with Common Betting Scam Scenarios:</div>
+              <div class="preset-chips">
+                <button class="chip-btn chip-betting" onclick="loadBettingPreset('color')">🎲 Color Prediction Trap</button>
+                <button class="chip-btn chip-betting" onclick="loadBettingPreset('aviator')">✈️ Aviator 100x Fake Multiplier</button>
+                <button class="chip-btn chip-betting" onclick="loadBettingPreset('cricket')">🏏 Unofficial IPL Betting ID Portal</button>
+                <button class="chip-btn chip-betting" onclick="loadBettingPreset('telegram_vip')">💎 Telegram VIP Casino Group Link</button>
+                <button class="chip-btn chip-betting" onclick="loadBettingPreset('safe_bet')">🛡️ Licensed Regulated Gaming Portal (Demo)</button>
+              </div>
+            </div>
+            <button class="btn-scan-action" onclick="scanBettingURL()">
+              <span>🔍</span> Run Deep Betting & Fraud Analysis
+            </button>
+          </div>
+
+          <!-- 2. General URL Scanner Panel -->
+          <div id="panel-url" class="scanner-panel hidden">
+            <div class="panel-header">
+              <h3><span>🔗</span> Inspect Website URL / Link</h3>
+              <span class="panel-status">● Phishing & Domain Reputation</span>
+            </div>
+            <div class="input-group">
+              <input id="input-url" class="cyber-input" type="text" placeholder="e.g., http://sbi-kyc-verification-update.top/login">
+            </div>
+            <div class="preset-chips-wrap">
+              <div class="preset-title">Try Phishing Examples:</div>
+              <div class="preset-chips">
+                <button class="chip-btn" onclick="loadURLPreset('bank_phish')">🏦 Fake Bank KYC Update</button>
+                <button class="chip-btn" onclick="loadURLPreset('electricity')">⚡ Electricity Disconnection Notice</button>
+                <button class="chip-btn" onclick="loadURLPreset('shortener')">🔗 Obfuscated Bit.ly Link</button>
+                <button class="chip-btn" onclick="loadURLPreset('safe_site')">🛡️ Legitimate Bank Portal</button>
+              </div>
+            </div>
+            <button class="btn-scan-action" onclick="scanGeneralURL()">
+              <span>🔍</span> Scan Website URL
+            </button>
+          </div>
+
+          <!-- 3. SMS & WhatsApp Message Panel -->
+          <div id="panel-message" class="scanner-panel hidden">
+            <div class="panel-header">
+              <h3><span>💬</span> Paste SMS, WhatsApp, or Email Text</h3>
+              <span class="panel-status">● NLP Scam Pattern Analyzer</span>
+            </div>
+            <div class="input-group">
+              <textarea id="input-message" class="cyber-textarea" placeholder="Paste the exact suspicious message here... Example: Dear customer, your electricity power will be disconnected tonight at 9:30 PM due to unpaid bill. Call our officer at 98765xxxxx immediately..."></textarea>
+            </div>
+            <div class="preset-chips-wrap">
+              <div class="preset-title">Load Typical Scam Texts:</div>
+              <div class="preset-chips">
+                <button class="chip-btn" onclick="loadMessagePreset('electricity_text')">⚡ Power Cut Warning</button>
+                <button class="chip-btn" onclick="loadMessagePreset('lottery_text')">🎁 KBC / WhatsApp Cash Prize</button>
+                <button class="chip-btn" onclick="loadMessagePreset('upi_pin_text')">💸 UPI "Enter PIN to Receive Money"</button>
+                <button class="chip-btn" onclick="loadMessagePreset('apk_loan_text')">📱 Instant Loan Approval SMS</button>
+              </div>
+            </div>
+            <button class="btn-scan-action" onclick="scanMessageText()">
+              <span>🔍</span> Analyze Message Text
+            </button>
+          </div>
+
+          <!-- 4. Screenshot & QR Code Scanner Panel -->
+          <div id="panel-screenshot" class="scanner-panel hidden">
+            <div class="panel-header">
+              <h3><span>📸</span> Inspect Screenshot or Payment Slip</h3>
+              <span class="panel-status">● Visual Threat & OCR Detection</span>
+            </div>
+            <label class="dropzone" id="screenshotDropzone">
+              <input type="file" id="screenshotFile" accept="image/*" onchange="handleScreenshotUpload(event)">
+              <div class="dropzone-icon">📥</div>
+              <b>Click to upload or drag screenshot / QR code here</b>
+              <small>Supports PNG, JPG, WEBP • Analyzes fake UPI receipts, betting app UI, and QR codes</small>
+              <img id="screenshotPreview" class="dropzone-preview" alt="Uploaded evidence preview">
+            </label>
+            <div class="preset-chips-wrap" style="margin-top: 14px;">
+              <div class="preset-title">Or Test with Simulated Evidence Presets:</div>
+              <div class="preset-chips">
+                <button class="chip-btn" onclick="loadScreenshotPreset('fake_upi_slip')">🧾 Fake GooglePay Payment Screenshot</button>
+                <button class="chip-btn" onclick="loadScreenshotPreset('betting_app_ui')">🎰 Color Trading App Deposit Page</button>
+                <button class="chip-btn" onclick="loadScreenshotPreset('qr_code_scam')">🔳 Fake Merchant QR Code</button>
+              </div>
+            </div>
+            <button class="btn-scan-action" onclick="scanScreenshotEvidence()">
+              <span>🔍</span> Inspect Screenshot Evidence
+            </button>
+          </div>
+
+          <!-- 5. Job & Task Fraud Panel -->
+          <div id="panel-job" class="scanner-panel hidden">
+            <div class="panel-header">
+              <h3><span>💼</span> Evaluate Job / Task / Investment Offer</h3>
+              <span class="panel-status">● Part-Time & Prepaid Task Analyzer</span>
+            </div>
+            <div class="input-group">
+              <textarea id="input-job" class="cyber-textarea" placeholder="Paste job offer details, salary claims, Telegram recruiter chat, or crypto trading task instructions..."></textarea>
+            </div>
+            <div class="preset-chips-wrap">
+              <div class="preset-title">Sample Job Scam Scenarios:</div>
+              <div class="preset-chips">
+                <button class="chip-btn" onclick="loadJobPreset('youtube_like')">🎬 "Like YouTube Videos & Earn ₹5000/day"</button>
+                <button class="chip-btn" onclick="loadJobPreset('crypto_task')">🪙 Crypto Recharge Task with 30% Commission</button>
+                <button class="chip-btn" onclick="loadJobPreset('hotel_review')">🏨 Hotel Review Rating Part-Time Job</button>
+              </div>
+            </div>
+            <button class="btn-scan-action" onclick="scanJobOffer()">
+              <span>🔍</span> Evaluate Job Legitimacy
+            </button>
+          </div>
+
+          <!-- Dynamic Deep Result Card Container -->
+          <div id="scanResultContainer" class="result-card hidden" role="region" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🧬 Scam DNA Explanation Feature -->
+    <section class="scanner-section" id="scam-dna-info">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">SIGNATURE CAPABILITY</div>
+          <h2>What is Scam DNA?</h2>
+        </div>
+        <p>
+          Unlike generic scanners that only give a pass/fail, ScamShield models 6 distinct psychological and infrastructure attack vectors to explain <i>how</i> fraudsters manipulate victims.
+        </p>
+      </div>
+
+      <div class="dna-metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div class="threat-card">
+          <div class="threat-card-icon">⏳</div>
+          <h4>1. Urgency & Time Pressure</h4>
+          <p>Fabricated deadlines ("Account blocked in 2 hours", "Power cut tonight") that bypass critical rational thinking.</p>
+        </div>
+        <div class="threat-card">
+          <div class="threat-card-icon">💸</div>
+          <h4>2. Suspicious UPI / Payment Vector</h4>
+          <p>Demands for upfront "registration deposits", "UPI PIN to receive funds", or unverified personal VPA transfers.</p>
+        </div>
+        <div class="threat-card">
+          <div class="threat-card-icon">🎭</div>
+          <h4>3. Impersonation & Spoofing</h4>
+          <p>Mimicking reputed banks, government utilities (Bijli Vibhag), telecom providers, or known gaming brands.</p>
+        </div>
+        <div class="threat-card">
+          <div class="threat-card-icon">🎰</div>
+          <h4>4. Unrealistic Guaranteed Gains</h4>
+          <p>Unbelievable multipliers ("100x guaranteed in 2 minutes", "Earn ₹5,000/day from home") typical of betting & task fraud.</p>
+        </div>
+        <div class="threat-card">
+          <div class="threat-card-icon">🌐</div>
+          <h4>5. Domain & APK Infrastructure</h4>
+          <p>Freshly registered shady TLDs (.top, .xyz), raw IP hosting, sideloaded unverified Android APKs, and URL shorteners.</p>
+        </div>
+        <div class="threat-card">
+          <div class="threat-card-icon">🔒</div>
+          <h4>6. Credential & Identity Harvesting</h4>
+          <p>Illegal extraction of OTPs, ATM PINs, Aadhaar/PAN cards, or device accessibility permissions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🚨 "I'VE ALREADY BEEN SCAMMED" Emergency Hub -->
+    <section class="emergency-section" id="emergency">
+      <div class="emergency-shell">
+        <div class="emergency-head">
+          <div>
+            <span class="emergency-badge">🚨 EMERGENCY TRIAGE</span>
+            <h2>I've Already Been Scammed — What Do I Do Now?</h2>
+            <p style="color: var(--text-muted); font-size: 13px; margin-top: 4px;">
+              Don't panic. Quick action in the first 2 hours (the "Golden Hour") dramatically increases fund recovery chances.
+            </p>
+          </div>
+          <div class="emergency-hotline">
+            <small>National Cyber Helpline (India)</small>
+            <strong>📞 Dial 1930</strong>
+            <small style="margin-top: 4px; color: var(--cyan);">cybercrime.gov.in</small>
+          </div>
+        </div>
+
+        <div class="preset-title" style="margin-bottom: 12px;">Step 1: Select what happened to get an immediate custom response:</div>
+        <div class="emergency-options">
+          <div class="emergency-opt-card active" onclick="selectEmergencyScenario('upi')">
+            <span>💸</span>
+            <b>I Transferred Money / UPI</b>
+            <small>Paid a betting site, fraud QR, or fake job</small>
+          </div>
+          <div class="emergency-opt-card" onclick="selectEmergencyScenario('otp')">
+            <span>🔑</span>
+            <b>I Shared an OTP or PIN</b>
+            <small>Gave secret verification codes to caller</small>
+          </div>
+          <div class="emergency-opt-card" onclick="selectEmergencyScenario('apk')">
+            <span>📱</span>
+            <b>I Installed an Unknown APK / App</b>
+            <small>Downloaded remote access (AnyDesk) or loan app</small>
+          </div>
+          <div class="emergency-opt-card" onclick="selectEmergencyScenario('card')">
+            <span>💳</span>
+            <b>I Entered Card / Bank Details</b>
+            <small>Filled CVV / NetBanking on a fake page</small>
+          </div>
+        </div>
+
+        <!-- Dynamic Emergency Action Protocol -->
+        <div id="emergencyProtocolOutput" class="emergency-protocol-card"></div>
+      </div>
+    </section>
+
+    <!-- 🇮🇳 India-Specific Threat Matrix -->
+    <section class="india-threat-section" id="india-threats">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">LOCALIZED INTELLIGENCE 🇮🇳</div>
+          <h2>Top Active Indian Scam Patterns</h2>
+        </div>
+        <p>
+          Cyber criminals tailor attacks specifically targeting Indian payment workflows, UPI apps, and regional schemes.
+        </p>
+      </div>
+
+      <div class="threat-cards-grid">
+        <div class="threat-card" onclick="loadBettingPreset('color')">
+          <div class="threat-card-icon">🎲</div>
+          <h4>Illegal Color Prediction Games</h4>
+          <p>Users are added to Telegram "VIP teacher" channels. Initial small bets win, but large deposits are permanently locked behind "withdrawal tax fees".</p>
+          <div class="threat-meta">
+            <span>Primary Vector: <b>Telegram / UPI</b></span>
+            <span class="threat-risk-tag">🔴 CRITICAL RISK</span>
+          </div>
+        </div>
+
+        <div class="threat-card" onclick="loadMessagePreset('upi_pin_text')">
+          <div class="threat-card-icon">🏧</div>
+          <h4>UPI PIN "Receive Money" Trick</h4>
+          <p>Scammer sends a "Collect Request" on PhonePe/GPay claiming you will receive money for an OLX item or prize. <b>Entering your PIN always deducts money!</b></p>
+          <div class="threat-meta">
+            <span>Primary Vector: <b>UPI Collect API</b></span>
+            <span class="threat-risk-tag">🔴 CRITICAL RISK</span>
+          </div>
+        </div>
+
+        <div class="threat-card" onclick="loadJobPreset('youtube_like')">
+          <div class="threat-card-icon">🎬</div>
+          <h4>Part-Time "YouTube Like / Rating" Job</h4>
+          <p>Pays ₹150 for first 3 likes to build trust, then demands "Merchant Prepaid Orders" of ₹5,000 to ₹50,000 in encrypted group chats.</p>
+          <div class="threat-meta">
+            <span>Primary Vector: <b>WhatsApp / Telegram</b></span>
+            <span class="threat-risk-tag">🟠 HIGH RISK</span>
+          </div>
+        </div>
+
+        <div class="threat-card" onclick="loadMessagePreset('electricity_text')">
+          <div class="threat-card-icon">⚡</div>
+          <h4>Electricity Bill Power Cut SMS</h4>
+          <p>Fake SMS claiming power will be disconnected at 9:30 PM. Victim calls the number and is forced to install an APK or pay ₹10 on a phishing portal.</p>
+          <div class="threat-meta">
+            <span>Primary Vector: <b>SMS Spoofing</b></span>
+            <span class="threat-risk-tag">🔴 CRITICAL RISK</span>
+          </div>
+        </div>
+
+        <div class="threat-card" onclick="loadMessagePreset('apk_loan_text')">
+          <div class="threat-card-icon">📱</div>
+          <h4>Instant Loan Extortion APKs</h4>
+          <p>Disburses ₹2,000 without KYC, then steals all contacts and photos from phone permissions to blackmail victims within 7 days.</p>
+          <div class="threat-meta">
+            <span>Primary Vector: <b>Sideloaded APK</b></span>
+            <span class="threat-risk-tag">🔴 CRITICAL RISK</span>
+          </div>
+        </div>
+
+        <div class="threat-card" onclick="loadBettingPreset('cricket')">
+          <div class="threat-card-icon">🏏</div>
+          <h4>Fake Cricket Betting ID WhatsApp Portals</h4>
+          <p>Operates through temporary WhatsApp numbers issuing "Master Betting IDs". Withdrawals are abruptly denied when users try to cash out.</p>
+          <div class="threat-meta">
+            <span>Primary Vector: <b>WhatsApp Links</b></span>
+            <span class="threat-risk-tag">🟠 HIGH RISK</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Threat Intelligence Database Section -->
+    <section class="database-section" id="database">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">COMMUNITY THREAT INTELLIGENCE</div>
+          <h2>Verified Scam & Betting Domain Database</h2>
+        </div>
+        <p>
+          Browse real-time flagged domains, reported illegal betting portals, and confirmed phishing infrastructure tracked by ScamShield AI.
+        </p>
+      </div>
+
+      <div class="db-shell">
+        <div class="db-toolbar">
+          <input type="text" id="dbSearchInput" class="db-search" placeholder="Search domain, URL, or scam type..." oninput="filterThreatDatabase()">
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="db-filter-btn active" onclick="setDbCategoryFilter('all', this)">All Threats</button>
+            <button class="db-filter-btn" onclick="setDbCategoryFilter('Betting/Gambling', this)">Betting / Gambling</button>
+            <button class="db-filter-btn" onclick="setDbCategoryFilter('Phishing', this)">Phishing / KYC</button>
+            <button class="db-filter-btn" onclick="setDbCategoryFilter('Job Fraud', this)">Job Fraud</button>
+            <button class="db-filter-btn" onclick="setDbCategoryFilter('Loan APK', this)">Loan APK</button>
+          </div>
+        </div>
+
+        <div class="db-table-container">
+          <table class="db-table">
+            <thead>
+              <tr>
+                <th>Domain / Asset</th>
+                <th>Category</th>
+                <th>Risk Score</th>
+                <th>Detection Reason</th>
+                <th>Reported By</th>
+                <th>Community Votes</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="dbTableBody">
+              <!-- Dynamically populated from script.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-User Hub: Personal History & Live Community Activity -->
+    <section class="scanner-section" id="user-hub">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">MULTI-USER COLLABORATION & AUDIT</div>
+          <h2>My Investigation Hub & Community Feed</h2>
+        </div>
+        <div>
+          <span class="network-pill" id="networkStatusBadge">
+            <span class="pulse-dot"></span> <span id="networkStatusText">Multi-User Sync Active</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="user-hub-grid">
+        <!-- Personal Scan History for Current User -->
+        <div class="hub-card">
+          <div class="hub-header">
+            <h3><span>📂</span> My Scan History (<span id="userScanCount">0</span>)</h3>
+            <button class="btn-history-action" onclick="clearCurrentUserHistory()">Clear History</button>
+          </div>
+          <div id="userHistoryList" class="history-list">
+            <div style="color: var(--text-dim); text-align: center; padding: 24px; font-size: 12px;">
+              No scans performed under this profile yet. Paste a link or message above to start!
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Community Threat Activity Stream -->
+        <div class="hub-card">
+          <div class="hub-header">
+            <h3><span>⚡</span> Live Multi-User Threat Activity</h3>
+            <small style="color: var(--text-dim); font-size: 11px;">Real-time Network Feed</small>
+          </div>
+          <div id="communityFeedList" class="community-feed-list">
+            <!-- Dynamically populated from script.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Report a Scam Modal -->
+  <div id="reportModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="closeReportModal()" aria-label="Close modal">✕</button>
+      <h3 id="reportModalTitle">🚩 Report Suspicious Website or Betting Link</h3>
+      <p>Contribute to ScamShield's crowdsourced threat database to protect other users from financial loss.</p>
+      <form id="scamReportForm" onsubmit="submitScamReport(event)">
+        <div class="form-group">
+          <label for="reportUrl">Website URL / Betting Link / UPI ID *</label>
+          <input id="reportUrl" class="form-control" type="text" placeholder="https://suspicious-site.example" required>
+        </div>
+        <div class="form-group">
+          <label for="reportCategory">Scam Category *</label>
+          <select id="reportCategory" class="form-control" required>
+            <option value="Betting/Gambling">Betting / Gambling Fraud</option>
+            <option value="Phishing">Phishing / Bank Impersonation</option>
+            <option value="Job Fraud">Fake Part-Time Job / Task Scam</option>
+            <option value="UPI / QR Fraud">Fake UPI / QR Code Scam</option>
+            <option value="Loan APK">Extortion Loan App</option>
+            <option value="Lottery / Prize">Fake Lottery / Prize</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reportDesc">Description of Scam / Modus Operandi</label>
+          <textarea id="reportDesc" class="form-control" rows="3" placeholder="Explain what happened (e.g., asked for ₹1,000 deposit via UPI, promised 5x win, blocked withdrawal)..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+          Submit Threat Report
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Incident Evidence Report Generator Modal -->
+  <div id="incidentReportModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="incidentReportTitle">
+    <div class="modal-dialog" style="max-width: 700px;">
+      <button class="modal-close" onclick="closeIncidentReportModal()" aria-label="Close modal">✕</button>
+      <h3 id="incidentReportTitle">📄 Formal Scam Incident Report Sheet</h3>
+      <p>Ready for submission to Cyber Crime Police (1930 / cybercrime.gov.in) or your Bank's fraud cell.</p>
+      
+      <div id="printableReportContent" class="report-sheet">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div style="display:flex; gap:12px; justify-content: flex-end;">
+        <button class="btn-secondary" onclick="printIncidentReport()">
+          🖨️ Print / Save as PDF
+        </button>
+        <button class="btn-primary" onclick="copyIncidentSummary()">
+          📋 Copy Text Summary
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-User Profile Switcher Modal -->
+  <div id="profileModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="closeProfileModal()" aria-label="Close modal">✕</button>
+      <h3 id="profileModalTitle">👥 Switch Active User Profile</h3>
+      <p>ScamShield AI supports multiple users, roles, and collaborative peer verification. Select a profile or create your own:</p>
+      
+      <div class="profile-picker-grid" id="profilePickerList">
+        <!-- Dynamically rendered profiles -->
+      </div>
+
+      <div style="border-top: 1px solid var(--panel-border); padding-top: 16px; margin-top: 16px;">
+        <h4 style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">Or Create / Use Custom Persona:</h4>
+        <div style="display: flex; gap: 8px;">
+          <input id="customUserNameInput" class="form-control" type="text" placeholder="Your Name (e.g. Inspector Roy)">
+          <select id="customUserRoleInput" class="form-control" style="max-width: 140px;">
+            <option value="Citizen">Citizen</option>
+            <option value="Investigator">Investigator</option>
+            <option value="Bank Officer">Bank Officer</option>
+            <option value="Cyber Cell">Cyber Cell</option>
+          </select>
+          <button class="btn-primary" onclick="createCustomProfile()" style="white-space: nowrap;">
+            Set Active
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span style="font-size: 18px; font-weight: 800; color: #fff; font-family: var(--font-head);">
+          🛡️ ScamShield <b>AI</b>
+        </span>
+        <p style="color: var(--text-dim); margin-top: 4px; font-size: 11px;">
+          Next-Gen Scam & Betting Fraud Investigation Engine • Built for Digital Safety
+        </p>
+      </div>
+      <div class="footer-helplines">
+        <div class="helpline-badge">
+          <span>National Cyber Helpline: <b>1930</b></span>
+        </div>
+        <div class="helpline-badge">
+          <span>Portal: <b>cybercrime.gov.in</b></span>
+        </div>
+        <div class="helpline-badge">
+          <span>CERT-In: <b>cert-in.org.in</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Disclaimer: ScamShield AI is an analytical fraud prevention assistant. Always verify through official banking channels.</span>
+      <span>Privacy-First • No user banking credentials are ever stored.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
